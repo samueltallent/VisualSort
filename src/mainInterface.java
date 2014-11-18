@@ -44,7 +44,7 @@ class selectionMenu extends JFrame
 		{
 			words.add(in.next());
 		}
-		this.setTitle("Samuel Tallent's Algorithm Program");
+		this.setTitle("Visual Sort");
 		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		
 		this.setLayout(new BorderLayout());
