@@ -29,7 +29,7 @@ public class leftPanel extends JPanel
 		text = new JTextArea(5,5);
 		text.setBackground(new Color(238,238,238));
 		text.setEditable(false);
-		text.setText("\n\n\n\n\n\n\n\n\n\n    Samuel Tallent's Algorithm Program\n\t                    Version 1.0");
+		text.setText("\n\n\n\n\n\n\n\n\n\n    Visual Sort\n\t                    Version 1.0");
 		infoPanel.add(text);
 		add(infoPanel);
 	}
