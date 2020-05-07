@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
 /**
  * Class that contains settings for sorts
  */
-public class sortMenu extends JPanel implements ActionListener
+public class SortMenu extends JPanel implements ActionListener
 {
 	protected static JButton startButton;
 	protected static JButton pauseButton;
@@ -34,7 +34,7 @@ public class sortMenu extends JPanel implements ActionListener
 	/**
 	 * creates a new sortMenu
 	 */
-	public sortMenu()
+	public SortMenu()
 	{
 		setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Sorts"));
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -64,8 +64,8 @@ public class sortMenu extends JPanel implements ActionListener
 		});
 		startButton = new JButton("START");
 		pauseButton = new JButton("PAUSE/RESUME");
-		startButton.addActionListener(new drawPanel());
-		pauseButton.addActionListener(new drawPanel());
+		startButton.addActionListener(new DrawPanel());
+		pauseButton.addActionListener(new DrawPanel());
 		pauseButton.addKeyListener(new KeyListener()
 		{
 			@Override 

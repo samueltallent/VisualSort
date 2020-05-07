@@ -14,7 +14,7 @@ import java.text.DecimalFormat;
 /**
  * drawPanel is the class where the graphical portion of the program is displayed
  */
-public class drawPanel extends JComponent implements ActionListener
+public class DrawPanel extends JComponent implements ActionListener
 {
 	private JTextArea text;
 	private String dataType;
@@ -36,7 +36,7 @@ public class drawPanel extends JComponent implements ActionListener
 	/**
 	 * creates a drawPanel that displays the graphics in the application
 	 */
-	public drawPanel()
+	public DrawPanel()
 	{
 		//System.out.println (count++);
 		setLayout(new FlowLayout());
@@ -59,7 +59,7 @@ public class drawPanel extends JComponent implements ActionListener
               }
 		});
 		
-		dataType = generalMenu.dataSelected;
+		dataType = GeneralMenu.dataSelected;
 		started = false;
 		finished = false;
 		xdist = 130;
@@ -101,7 +101,7 @@ public class drawPanel extends JComponent implements ActionListener
 	public void setData()
 	{
 		
-		dataType = generalMenu.dataSelected;
+		dataType = GeneralMenu.dataSelected;
 		
 		if(nodes.size() != 0)
 			nodes.clear();
@@ -111,7 +111,7 @@ public class drawPanel extends JComponent implements ActionListener
 				for(int i = 0; i < 10; i++)
 				{
 					int randInt = (int)((Math.random()*2009)+1);
-					nodes.add(new Node(x1 + (i * xdist), y1+100, selectionMenu.words.get(randInt)));
+					nodes.add(new Node(x1 + (i * xdist), y1+100, SelectionMenu.words.get(randInt)));
 				}
 				break;
 			case "Integer":
@@ -297,14 +297,14 @@ public class drawPanel extends JComponent implements ActionListener
     	
     	
     	
-    	if(e.getSource() == sortMenu.startButton)
+    	if(e.getSource() == SortMenu.startButton)
     	{
     		if(pointer != null && pointer.isRunning())
     			pointer.setRunning(false);
     		algs = new Algorithms(nodes, this);
-    		if(sortMenu.ascending.isSelected())
+    		if(SortMenu.ascending.isSelected())
     		{
-    			String sortType = ""+sortMenu.sortType.getSelectedItem();
+    			String sortType = ""+ SortMenu.sortType.getSelectedItem();
     			switch(sortType)
     			{
     				case "Bubble": algs.ascendingBubbleSort();
@@ -318,7 +318,7 @@ public class drawPanel extends JComponent implements ActionListener
     		}
     		else
     		{
-    			String sortType = ""+sortMenu.sortType.getSelectedItem();
+    			String sortType = ""+ SortMenu.sortType.getSelectedItem();
     			switch(sortType)
     			{
     				case "Bubble": algs.descendingBubbleSort();
@@ -344,14 +344,14 @@ public class drawPanel extends JComponent implements ActionListener
 
     	}
     	
-    	if(e.getSource() == sortMenu.pauseButton)
+    	if(e.getSource() == SortMenu.pauseButton)
     	{
     		Node.isPaused = !Node.isPaused;
     	}
     	
-    	if(e.getSource() == searchMenu.startButton)
+    	if(e.getSource() == SearchMenu.startButton)
     	{
-    		String searchType = "" + searchMenu.searchType.getSelectedItem();
+    		String searchType = "" + SearchMenu.searchType.getSelectedItem();
     		algs = new Algorithms(nodes, this);
     		pointer = new Pointer();
     		for(Node n : nodes)
@@ -376,19 +376,19 @@ public class drawPanel extends JComponent implements ActionListener
     		catch(Exception exc){}
     	}
     
-    	if(e.getSource() == searchMenu.pauseButton)
+    	if(e.getSource() == SearchMenu.pauseButton)
     	{
     		Algorithms.isPaused = !Algorithms.isPaused;
     	}
     	
-    	if(e.getSource() == generalMenu.reset)
+    	if(e.getSource() == GeneralMenu.reset)
     	{	
     		finished = true;
     		started = false;
     		nodes.clear();
     		setData();
     		algs = new Algorithms(nodes, this);
-    		new drawPanel();	
+    		new DrawPanel();
     	}
     }
 

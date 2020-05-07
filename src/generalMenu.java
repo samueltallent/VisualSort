@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Class for general menu that allows selection of data type and can open information window
  */
-public class generalMenu extends JPanel implements ActionListener
+public class GeneralMenu extends JPanel implements ActionListener
 {
 	private JComboBox dataType;
 	private JTextArea information;
@@ -26,7 +26,7 @@ public class generalMenu extends JPanel implements ActionListener
 		/**
 		 * Creates a generalMenu
 		 */
-	public generalMenu()
+	public GeneralMenu()
 	{
 		setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Information"));
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -53,7 +53,7 @@ public class generalMenu extends JPanel implements ActionListener
 		infoButton = new JButton("Information");
 		reset = new JButton("Reset");
 		infoButton.addActionListener(this);
-		reset.addActionListener(new drawPanel());
+		reset.addActionListener(new DrawPanel());
 		
 
 		genPanel = new JPanel();
@@ -87,8 +87,8 @@ public class generalMenu extends JPanel implements ActionListener
     		new InformationWindow();
     	if(e.getSource() == reset)
     	{
-    		drawPanel.nodes.clear();
-    		new drawPanel();	
+    		DrawPanel.nodes.clear();
+    		new DrawPanel();
     	}
     }
 }

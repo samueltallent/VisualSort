@@ -29,7 +29,7 @@ public class Algorithms
      * Creates an Algorithms to control which type of data should be used
      * @param ns an ArrayList<Node> of the nodes on the screen
      */
-    public Algorithms(ArrayList<Node> ns, drawPanel drawer)
+    public Algorithms(ArrayList<Node> ns, DrawPanel drawer)
     {
     	intalgs = null;
     	stringalgs = null;
@@ -141,9 +141,9 @@ public class Algorithms
 			if(bint == -10)
 			{
 				a.setImage(a.wImg);
-				if(!drawPanel.pointer.isRunning())
-					drawPanel.pointer.setRunning(true);
-				drawPanel.pointer.setNode(a);
+				if(!DrawPanel.pointer.isRunning())
+					DrawPanel.pointer.setRunning(true);
+				DrawPanel.pointer.setNode(a);
 				try
 				{
 					Thread.sleep(500);
@@ -156,9 +156,9 @@ public class Algorithms
 			{
 				a.setImage(a.sImg);
 				
-				if(!drawPanel.pointer.isRunning())
-					drawPanel.pointer.setRunning(true);
-				drawPanel.pointer.setNode(a);
+				if(!DrawPanel.pointer.isRunning())
+					DrawPanel.pointer.setRunning(true);
+				DrawPanel.pointer.setNode(a);
 				try
 				{
 					Thread.sleep(500);

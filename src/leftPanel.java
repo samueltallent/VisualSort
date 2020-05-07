@@ -7,22 +7,22 @@ import java.util.*;
 /**
  * The left panel of the frame, contains settings for the program
  */
-public class leftPanel extends JPanel
+public class LeftPanel extends JPanel
 {
 	private JTextArea text;
 	
 	/**
-	 * Creates a leftPanel with a generalMenu, sortMenu, and a searchMenu
+	 * Creates a LeftPanel with a generalMenu, sortMenu, and a searchMenu
 	 */
-	public leftPanel()
+	public LeftPanel()
 	{
 		setLayout(new GridLayout(4,0));
 
 		setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Settings"));
 		
-		add(new generalMenu());
-		add(new sortMenu());
-		add(new searchMenu());
+		add(new GeneralMenu());
+		add(new SortMenu());
+		add(new SearchMenu());
 		
 		JPanel infoPanel = new JPanel();
 		//infoPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Information"));

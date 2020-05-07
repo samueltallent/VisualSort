@@ -7,12 +7,12 @@ import java.util.*;
 /**
  * creates the selectionMenu which is the main frame for the program
  */
-public class mainInterface
+public class MainInterface
 {
-	protected static selectionMenu interOne;
+	protected static SelectionMenu interOne;
 	public static void main(String args[])
 	{
-    	interOne = new selectionMenu();
+    	interOne = new SelectionMenu();
     	//InformationWindow w = new InformationWindow();
     }
 }
@@ -20,17 +20,17 @@ public class mainInterface
 /**
  * Main frame of the program
  */
-class selectionMenu extends JFrame
+class SelectionMenu extends JFrame
 {
 	protected static ArrayList<String> words;
 	private static final int FRAME_WIDTH = 1600;
 	private static final int FRAME_HEIGHT = 900;
-	protected static drawPanel drawer = new drawPanel();
+	protected static DrawPanel drawer = new DrawPanel();
 	
 	/**
-	 * Creates a selectionMenu with a leftPanel and a drawPanel
+	 * Creates a selectionMenu with a LeftPanel and a drawPanel
 	 */
-	public selectionMenu()
+	public SelectionMenu()
 	{
 		words = new ArrayList<String>();
 		Scanner in = null;
@@ -49,7 +49,7 @@ class selectionMenu extends JFrame
 		
 		this.setLayout(new BorderLayout());
 		
-		add(new leftPanel(), BorderLayout.WEST);
+		add(new LeftPanel(), BorderLayout.WEST);
 		add(drawer, BorderLayout.CENTER);
 		
 

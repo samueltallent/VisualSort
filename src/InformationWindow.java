@@ -11,7 +11,7 @@ public class InformationWindow extends JFrame implements ActionListener
 {
 	private static final int FRAME_WIDTH = 400;
 	private static final int FRAME_HEIGHT = 300;
-	JPanel leftPanel;
+	JPanel LeftPanel;
 	JPanel centerPanel;
 	ButtonGroup algorithms;
 	JTextArea text;
@@ -24,12 +24,12 @@ public class InformationWindow extends JFrame implements ActionListener
 		this.setTitle("Algorithm Information");
 		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		this.setLayout(new BorderLayout());
-		leftPanel = new JPanel();
+		LeftPanel = new JPanel();
 		centerPanel = new JPanel();
 		centerPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Information"));
 		
-		leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.PAGE_AXIS));
-		leftPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Algorithms"));
+		LeftPanel.setLayout(new BoxLayout(LeftPanel, BoxLayout.PAGE_AXIS));
+		LeftPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Algorithms"));
 		text = new JTextArea(10,25);
 		text.setEditable(false);
 		text.setLineWrap(true);
@@ -43,7 +43,7 @@ public class InformationWindow extends JFrame implements ActionListener
 		
 		String [] algs = {"Selection", "Insertion", "Bubble", "Linear", "Binary"};
 		ButtonGroup algTypes = new ButtonGroup();
-		leftPanel.add(new JLabel("Sorts:"));
+		LeftPanel.add(new JLabel("Sorts:"));
 		for(String a : algs)
 		{
 			JRadioButton button = new JRadioButton(a);
@@ -51,15 +51,15 @@ public class InformationWindow extends JFrame implements ActionListener
 				button.setSelected(true);
 			if(a.equals("Linear"))
 			{
-				leftPanel.add(new JLabel(" "));
-				leftPanel.add(new JLabel("Searches:"));
+				LeftPanel.add(new JLabel(" "));
+				LeftPanel.add(new JLabel("Searches:"));
 			}
-			leftPanel.add(button);
+			LeftPanel.add(button);
 			algTypes.add(button);
 			button.addActionListener(this);
 		}
 		
-		add(leftPanel, BorderLayout.WEST);
+		add(LeftPanel, BorderLayout.WEST);
 		add(centerPanel, BorderLayout.CENTER);
 		setVisible(true);
 	}
@@ -80,7 +80,7 @@ public class InformationWindow extends JFrame implements ActionListener
 			case "Insertion": text.setText("Start with a sorted list of 1 element on the left, and N-1 unsorted items on the right. Take the first unsorted item (element #2) and insert it into the sorted list, moving elements as necessary. We now have a sorted list of size 2, and N -2 unsorted elements. Repeat for all elements."+
 				"\n\n(n^2) comparisons and swaps\n\nBest: O(N)\nWorst: O(N^2)");
 				break;
-			case "Bubble": text.setText("Starting on the left, compare adjacent items and keep “bubbling” the larger one to the right (it’s in its final place). Bubble sort the remaining N -1 items."+
+			case "Bubble": text.setText("Starting on the left, compare adjacent items and keep bubbling the larger one to the right (its in its final place). Bubble sort the remaining N -1 items."+
 				"\n\n(n^2)comparisons and swaps\n\nBest: O(N)\nWorst: O(N^2)");
 				break;
 			case "Linear": text.setText("Searches through each element from left to right.\n\nO(N)");

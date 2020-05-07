@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
 /**
  * Class that contains settings for searches
  */
-public class searchMenu extends JPanel
+public class SearchMenu extends JPanel
 {
 	protected static JComboBox searchType;
 	protected static JButton startButton;
@@ -31,7 +31,7 @@ public class searchMenu extends JPanel
 	/**
 	 * Creates a searchmenu
 	 */
-	public searchMenu()
+	public SearchMenu()
 	{
 		
 		setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Searches"));
@@ -47,8 +47,8 @@ public class searchMenu extends JPanel
 		
 		startButton = new JButton("START");
 		pauseButton = new JButton("PAUSE/RESUME");
-		startButton.addActionListener(new drawPanel());
-		pauseButton.addActionListener(new drawPanel());
+		startButton.addActionListener(new DrawPanel());
+		pauseButton.addActionListener(new DrawPanel());
 		
 //		startButton.addActionListener(mainInterface.interOne.drawer);
 //		pauseButton.addActionListener(mainInterface.interOne.drawer);

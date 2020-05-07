@@ -4,9 +4,9 @@ import java.awt.*;
 import java.io.*;
 import java.util.*;
 
-public class bubbleSort
+public class BubbleSort
 {
-	public bubbleSort(ArrayList<Node> nodes, JComponent jc)
+	public BubbleSort(ArrayList<Node> nodes, JComponent jc)
 	{
 	
 	}
